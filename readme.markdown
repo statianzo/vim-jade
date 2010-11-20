@@ -9,10 +9,9 @@ Installation
 ---
 
 1. Copy *jade.vim* into your `~/.vim/syntax` folder.
-2. Add a line to your `~/.vimrc`
+2. Add a line to your `~/.vimrc`:
 
-
-    au BufRead,BufNewFile *.jade setfiletype jade
+    `au BufRead,BufNewFile *.jade setfiletype jade`
 
 
 [jade]: https://github.com/visionmedia/jade

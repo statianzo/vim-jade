@@ -1,0 +1,18 @@
+vim-jade
+===
+
+vim-jade provides syntax highlighting for the [Jade][jade] templating engine. It
+is a port from tpope's [vim-haml][vh] with some adjustments to support
+differences in the syntax.
+
+Installation
+---
+
+1. Copy *jade.vim* into your `~/.vim/syntax` folder.
+2. Add a line to your `~/.vimrc`
+
+    au BufRead,BufNewFile *.jade setfiletype jade
+
+
+[jade]: https://github.com/visionmedia/jade
+[vh]: https://github.com/tpope/vim-haml

@@ -8,10 +8,8 @@ differences in the syntax.
 Installation
 ---
 
-1. Copy *jade.vim* into your `~/.vim/syntax` folder.
-2. Add a line to your `~/.vimrc`:
-
-    `au BufRead,BufNewFile *.jade setfiletype jade`
+1. Copy *syntax/jade.vim* into your `~/.vim/syntax` folder.
+2. Copy *ftdetect/jade.vim* into your `~/.vim/ftdetect` folder.
 
 
 [jade]: https://github.com/visionmedia/jade

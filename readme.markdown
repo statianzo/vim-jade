@@ -10,6 +10,7 @@ Installation
 
 1. Copy *syntax/jade.vim* into your `~/.vim/syntax` folder.
 2. Copy *ftdetect/jade.vim* into your `~/.vim/ftdetect` folder.
+3. Copy *indent/jade.vim* into your `~/.vim/indent` folder.
 
 
 [jade]: https://github.com/visionmedia/jade

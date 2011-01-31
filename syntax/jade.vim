@@ -20,7 +20,6 @@ syn cluster jadeComponent    contains=jadeAttributes,jadeClassChar,jadeIdChar,ja
 syn cluster jadeTop          contains=jadeBegin,jadePlainFilter,jadeSassFilter,jadeComment,jadeHtmlComment
 
 syn match   jadeBegin "^\s*\%([<>]\|&[^=~ ]\)\@!" nextgroup=jadeTag,jadeClassChar,jadeIdChar,jadePlainChar
-
 syn match   jadeTag        "\w\+" contained contains=htmlTagName,htmlSpecialTagName nextgroup=@jadeComponent
 syn region  jadeAttributes     matchgroup=jadeAttributesDelimiter start="(" end=")" contained contains=htmlArg,jadeAttributeString,jadeAttributeVariable,htmlEvent,htmlCssDefinition nextgroup=@jadeComponent
 syn match   jadeDespacer "[<>]" contained nextgroup=jadeDespacer,jadeSelfCloser,jadePlainChar
@@ -47,9 +46,8 @@ syn region  jadeJavascriptBlock start="^\z(\s*\)script" nextgroup=@jadeComponent
 syn region  jadeCssBlock        start="^\z(\s*\)style" nextgroup=@jadeComponent,jadeError  end="^\%(\z1 \| *$\)\@!" contains=@jadeTop,@htmlCss keepend
 syn match   jadeError "\$" contained
 
-syn region  jadeComment     start="^\z(\s*\)-#" end="^\%(\z1 \| *$\)\@!" 
-syn region  jadeHtmlComment start="^\z(\s*\)/"  end="^\%(\z1 \| *$\)\@!" contains=@jadeTop
-syn match   jadeIEConditional "\%(^\s*/\)\@<=\[if\>[^]]*]" contained containedin=jadeHtmlComment
+syn match   jadeComment "^\s*\/\/-.*$"
+syn match   jadeHtmlComment  "^\s*\/\/[^-].*$"
 
 hi def link jadeSelfCloser             Special
 hi def link jadeDespacer               Special
@@ -64,9 +62,8 @@ hi def link jadeAttributeVariable      Identifier
 hi def link jadeDocType                PreProc
 hi def link jadeFilter                 PreProc
 hi def link jadeAttributesDelimiter    Delimiter
-hi def link jadeHtmlComment            jadeComment
+hi def link jadeHtmlComment            SpecialComment
 hi def link jadeComment                Comment
-hi def link jadeIEConditional          SpecialComment
 hi def link jadeError                  Error
 
 let b:current_syntax = "jade"
@@ -75,4 +72,5 @@ if main_syntax == "jade"
   unlet main_syntax
 endif
 
+set comments=://-,://
 " vim:set sw=2:

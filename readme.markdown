@@ -1,5 +1,4 @@
-vim-jade
-===
+# vim-jade ![project-status](http://stillmaintained.com/statianzo/vim-jade.png) #
 
 vim-jade provides syntax highlighting for the [Jade][jade] templating engine. It
 is a port from tpope's [vim-haml][vh] with some adjustments to support
